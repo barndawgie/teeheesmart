@@ -1,0 +1,25 @@
+repos:
+  - repo: local
+    hooks:
+    - id: pytest
+      name: pytest
+      entry: script/test
+      language: system
+      pass_filenames: false
+      always_run: true
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.1
+    hooks:
+      - id: ruff
+      - id: ruff-format
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.3.0
+    hooks:
+      - id: codespell
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0  # Use the ref you want to point at
+    hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-toml
+    - id: check-yaml
